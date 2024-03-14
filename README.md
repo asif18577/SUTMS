@@ -3,12 +3,9 @@ SUTMS - Unified Threat Management System for Home Networks
 
 ## Features
 
-- IDS (Suricata 6.0.0)
-- NTOP
-- iptables
-- Webmin
-- STIX/TAXII
-- Webmin
+- Antibot - Automated Firewall response
+- Efficient IDS - integrated according to flow/applications.
+- Anomaly detection - 
 
 ## Installation
 
