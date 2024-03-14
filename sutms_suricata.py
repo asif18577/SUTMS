@@ -10,8 +10,8 @@ suricata_config = "/etc/suricata/suricata.yaml"
 rules_file = "/var/lib/suricata/rules"
 
 # Load the Suricata configuration file
-with open(suricata_config, "r") as f:
-    config = yaml.safe_load(f)
+with open(suricata_config, "r") as a:
+    config = yaml.safe_load(a)
 
 # Clear the existing default rule paths
 config["default-rule-path"] = []
@@ -31,7 +31,7 @@ for rule_file in enabled_rules:
 config["rule-files"] = {}
 
 # saving the config file
-with open(suricata_config, "w") as f:
-    yaml.dump(config, f)
+with open(suricata_config, "w") as a:
+    yaml.dump(config, a)
 
 print("Suricata HTTP, HTTPS, and DNS rules are enabled.”)
