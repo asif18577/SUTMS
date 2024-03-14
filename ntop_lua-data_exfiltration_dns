@@ -1,0 +1,18 @@
+-- Lua script to detect DNS packets larger than 40 bytes
+
+-- function to detect each UDP packet (DNS runs on UDP)
+local udp_cb = ntop.getUdpPacketCallback()
+ntop.registerUdpPacketCallback(detectLargeDNS)
+
+-- function to inspect DNS packets
+function detectLargeDNS(ip_packet, udp)
+  -- DNS destination port is 53 (DNS)
+  if udp.dst == 53 then
+    local pkt_len = ip_packet.pkt_len
+
+    -- if the packet length is greater than 40 bytes
+    if pkt_len > 40 then
+      print("[Lua Plugin] Data Exfiltration attempt detected " .. pkt_len .. " bytes")
+    end
+  end
+end
