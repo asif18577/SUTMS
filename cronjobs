@@ -1,0 +1,9 @@
+crontab -e
+# Run sutms_conversion.py after midnight (00:00)
+0 0 * * * /path_to/sutms_conversion.py
+
+# Run ioc.sh one hour after midnight (01:00)
+0 1 * * * /bin/bash /path/to/ioc.sh
+
+# Run sutms_suricata.py after midnight (00:00)
+0 2 * * * /path_to/sutms_suricata.py
