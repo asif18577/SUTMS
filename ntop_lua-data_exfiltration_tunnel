@@ -1,0 +1,18 @@
+-- Lua script to detect SSH tunneling
+
+-- function to detect each TCP packet (SSH runs on TCP)
+local tcp_cb = ntop.getTcpPacketCallback()
+ntop.registerTcpPacketCallback(detectTunneling)
+
+-- inspect TCP packets for SSH tunneling
+function detectTunneling(ip_packet, tcp)
+  -- Check if the destination port is 22 (SSH)
+  if tcp.dst == 22 then
+    local payload = ntop.getTcpPayload(ip_packet, tcp)
+
+    --payload contains the SSH signature
+    if string.find(payload, "SSH-") then
+      print("[Lua Plugin] Tunneling Detected")
+    end
+  end
+end
