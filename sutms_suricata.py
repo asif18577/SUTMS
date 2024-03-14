@@ -30,7 +30,7 @@ for rule_file in enabled_rules:
 # Disable all other rules
 config["rule-files"] = {}
 
-# Write the modified configuration to the file
+# saving the config file
 with open(suricata_config, "w") as f:
     yaml.dump(config, f)
 
