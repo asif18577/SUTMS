@@ -5,7 +5,7 @@ SUTMS - Unified Threat Management System for Home Networks
 
 - Antibot - Automated Firewall response
 - Efficient IDS - integrated according to flow/applications.
-- Anomaly detection - 
+- Anomaly detection 
 
 ## Installation
 
@@ -32,6 +32,7 @@ SUTMS - IDS Module according to application detection
 - Automate the above tasks by adding the entries listed in "sutms_cronjobs" file.
 - Review the logs and make sure for neccessary hits
 
-
+SUTMS - Anomaly detection
+- NTOP can be used to detect anomalies, certain use cases are include in "ntop_lua" file.
 
 
