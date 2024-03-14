@@ -1,4 +1,4 @@
-# Project Name
+# Artifact
 SUTMS - Unified Threat Management System for Home Networks
 
 ## Features
